@@ -12,17 +12,17 @@ const saltRound = 10;
 
 async function generatePassword(plainTextPassword: string): Promise<string> {
     //Generated Salted Hashed Passwords
-    return bcrypt.hash(plainTextPassword, saltRound);
+    return await bcrypt.hash(plainTextPassword, saltRound);
 }
 
 async function comparePasswords(plainTextPassword: string, hash: string): Promise<boolean> {
     //Compare your password to your Salted Hashed Password
-    return bcrypt.compare(plainTextPassword, hash);
+    return await bcrypt.compare(plainTextPassword, hash);
 }
 
 function generateJWT(user: User): string {
     //Use jwt to create a new JWT Payload containing
-    return jwt.sign(user, config.dev.jwt_secret);
+    return jwt.sign(JSON.stringify(user), config.dev.jwt_secret);
 }
 
 export function requireAuth(req: Request, res: Response, next: NextFunction) {
