@@ -12,14 +12,17 @@ const router: Router = Router();
 
 async function generatePassword(plainTextPassword: string): Promise<string> {
     //@TODO Use Bcrypt to Generated Salted Hashed Passwords
+    throw new Error("Not Implemented");
 }
 
 async function comparePasswords(plainTextPassword: string, hash: string): Promise<boolean> {
     //@TODO Use Bcrypt to Compare your password to your Salted Hashed Password
+    throw new Error("Not Implemented");
 }
 
 function generateJWT(user: User): string {
     //@TODO Use jwt to create a new JWT Payload containing
+    throw new Error("Not Implemented");
 }
 
 export function requireAuth(req: Request, res: Response, next: NextFunction) {
