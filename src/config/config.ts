@@ -7,7 +7,8 @@ export const config = {
     "dialect": "postgres",
     "aws_region": process.env.UDACITY_AWS_REGION,
     "aws_profile": process.env.UDACITY_AWS_PROFILE,
-    "aws_media_bucket": process.env.UDACITY_AWS_MEDIA_BUCKET
+    "aws_media_bucket": process.env.UDACITY_AWS_MEDIA_BUCKET,
+    "jwt_secret": process.env.UDACITY_JWT_SECRET
   },
   "prod": {
     "username": "",
